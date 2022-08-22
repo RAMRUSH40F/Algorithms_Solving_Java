@@ -2,7 +2,8 @@
 
 public class Generics_practice{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
 //        Account<String> acc1 = new Account<String>("1235rwr", 5000);
 //        Account<String> acc2 = new Account<String>("2373", 4300);
@@ -12,6 +13,8 @@ public class Generics_practice{
         Printer printer = new Printer();
         String[] people = {"Tom", "Alice", "Sam", "Kate", "Bob", "Helen"};
         Integer[] numbers = {23, 4, 5, 2, 13, 456, 4};
+
+        // Before GENERICS-METHOD they apply a certain type.
         printer.<String>print(people);
         printer.<Integer>print(numbers);
     }
