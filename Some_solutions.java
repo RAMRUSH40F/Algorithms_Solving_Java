@@ -1,9 +1,5 @@
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.HashMap;
-
+import java.util.*;
 
 class Some_solutions
 {
@@ -12,31 +8,12 @@ class Some_solutions
 
     public static void main(String[] args)
     {
-    }
-
-    static double pow(double a, int n) {
-
-        if (n % 2 == 0) {
-            return pow(a * a, n / 2);
-        }
-        else if (n==1) return a;
-        else {
-            return a*pow(a * a, (n - 1) / 2);
-        }
 
     }
-    static void first_list()
-    {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Hey");
-        list.add("That");
-        list.add("Is");
-        list.add("Incredible");
-        for (String elem : list)
-        {
-            System.out.printf("%s\s", elem);
-        }
-    }
+
+
+
+
 
     static void both_neighbor_less()
     {
@@ -121,7 +98,15 @@ class Some_solutions
     static void difficult_array()
     {
         /*
-        Вводится натуральное число n. На следующей строчке вводятся n целых чисел. Напишите код, который создаст массив с именем array на n элементов, в котором буду храниться введённые числа (элемент массива равен соответствующему числу в во второй строке). На следующей строке вводится число t - Количество запросов к вашей программе. Каждый запрос состоит из пары целых чисел и записывается на отдельной строке. Каждая пара чисел - индексы элементов, сумму которых вам надо найти. Выведите на экран сумму этих двух элементов для каждого запроса на каждой строке по отдельности. Если вдруг индекс индекс оказался вне пределов диапазона от 0 до n - 1, то выведите на экран слово Error.
+        Вводится натуральное число n. На следующей строчке вводятся n целых чисел.
+        Напишите код, который создаст массив с именем array на n элементов,
+        в котором буду храниться введённые числа (элемент массива равен соответствующему
+        числу в во второй строке). На следующей строке вводится число t - Количество
+        запросов к вашей программе. Каждый запрос состоит из пары целых чисел и записывается
+        на отдельной строке. Каждая пара чисел - индексы элементов, сумму которых вам надо найти.
+
+        Выведите на экран сумму этих двух элементов для каждого запроса на каждой строке по отдельности.
+        Если вдруг индекс индекс оказался вне пределов диапазона от 0 до n - 1, то выведите на экран слово Error.
          */
         Scanner sc = new Scanner(System.in);
 
@@ -273,63 +258,6 @@ class Some_solutions
         System.out.println(sum);
         sc.close();
     }
-}
-
-
-
-
-class Functions {
-    public static void main(String[] args) throws Exception {
-        write_odd_numbers_txt(100);
-//        read_txt("text1.txt");
-
-    }
-
-    static void read_txt(String path) throws Exception {
-
-        File file = new File(path);
-
-        Scanner scanner = new Scanner(file);
-        while (scanner.hasNextLine()) {
-            System.out.println(scanner.nextLine());
-        }
-        scanner.close();
-
-
-    }
-
-    static void write_odd_numbers_txt(int upper_limit) throws Exception {
-
-
-        try {
-            File myfile = new File("D:OneDrive\\\\Git\\\\Java\\\\Learning\\\\Beginning\\\\src\\\\file1.txt");
-
-            FileWriter fw = new FileWriter(myfile, true);
-
-            String text = "";
-
-            for (int i = 0; i < upper_limit; i++) {
-                text += "\n";
-                text += Integer.toString(i);
-            }
-
-            fw.write(text);
-            fw.append("end");
-
-//            fw.flush();
-            fw.close();
-
-        }
-
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-    }
-
-
-
-
     static void staff_stats()
     {
         /*
@@ -399,10 +327,29 @@ class Functions {
 
 
     }
+
+class Functions {
+    public static void main(String[] args) throws Exception
+    {
+
+    }
+
+    static void read_txt(String path) throws Exception {
+
+        File file = new File(path);
+
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            System.out.println(scanner.nextLine());
+        }
+        scanner.close();
+
+
+    }
     static void first_steps_dict()
     {
 
-        HashMap <String, String> human = new HashMap<String, String>();
+        HashMap <String, String> human = new HashMap<>();
         human.put("name", "Wlad");
         human.put("secondName", "Kowalew");
         human.put("age", "25");
@@ -423,6 +370,58 @@ class Functions {
             System.out.println(key + ": " + human.get(key));
         }
     }
+    static void write_odd_numbers_txt(int upper_limit) throws Exception {
+
+
+        try {
+            File myfile = new File("D:OneDrive\\\\Git\\\\Java\\\\Learning\\\\Beginning\\\\src\\\\file1.txt");
+
+            FileWriter fw = new FileWriter(myfile, true);
+
+            StringBuilder text = new StringBuilder();
+
+            for (int i = 0; i < upper_limit; i++)
+            {
+                text.append("\n");
+                text.append(i);
+            }
+
+            fw.write(text.toString());
+            fw.append("end");
+
+//          fw.flush();
+            fw.close();
+
+        }
+
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    static double pow(double a, int n) {
+
+        if (n % 2 == 0) {
+            return pow(a * a, n / 2);
+        }
+        else if (n==1) return a;
+        else {
+            return a*pow(a * a, (n - 1) / 2);
+        }
+
+    }
+    static void first_list()
+    {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Hey");
+        list.add("That");
+        list.add("Is");
+        list.add("Incredible");
+        for (String elem : list)
+        {
+            System.out.printf("%s\s", elem);
+        }
+    }
     static void favourite_word_counter()
     {
         Scanner sc = new Scanner(System.in);
@@ -432,7 +431,7 @@ class Functions {
         int count_1 = 0;
         int count_2 = 0;
         String text =sc.nextLine();
-        String array[] = text.split(" ");
+        String[] array = text.split(" ");
         for (String s : array) {
             char first =  s.toLowerCase().charAt(0);
             char last =  s.toLowerCase().charAt(s.length()-1);
@@ -445,6 +444,9 @@ class Functions {
         System.out.println(count_1);
         System.out.println(count_2);
     }
+    }
+
+
 }
 
 

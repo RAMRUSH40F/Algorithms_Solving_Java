@@ -1,8 +1,4 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class Binary_search 
+public class Binary_search
 {
     static int bin_search(int list[], int num){
 
