@@ -97,7 +97,7 @@ public class Sorts
                 currentSrc = currentDest;
                 currentDest = tmp;
 
-                size = size * 2;
+                size *=2;
             }
             return currentSrc;
         }

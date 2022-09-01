@@ -10,11 +10,6 @@ class Some_solutions
     {
 
     }
-
-
-
-
-
     static void both_neighbor_less()
     {
         Scanner sc = new Scanner(System.in);
