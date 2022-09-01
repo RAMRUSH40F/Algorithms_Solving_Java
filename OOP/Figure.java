@@ -1,3 +1,4 @@
+package OOP;
 // производный класс прямоугольника
 class Rectangle extends Figure
 {
