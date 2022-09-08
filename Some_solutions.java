@@ -9,7 +9,15 @@ class Some_solutions
     public static void main(String[] args)
     {
 
+
+
+
+
+
     }
+
+
+
     static void both_neighbor_less()
     {
         Scanner sc = new Scanner(System.in);
