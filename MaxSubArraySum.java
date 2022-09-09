@@ -5,7 +5,7 @@ public class MaxSubArraySum
 //   найдите подмассив максимальной длины, имеющий заданную сумму.
     public static void main(String[] args)
     {
-        short[] nums = { -5,5, 6, 5, 3, 5, 3, -2, 0 };
+        short[] nums = { 5,4,-1,7,8 };
         int target = 8;
 
         Kadane(nums);
@@ -22,14 +22,9 @@ public class MaxSubArraySum
 
         int temp_sum = arr[0];
 
-        for (int k = 1; k < arr.length-1; ++k)
+        for (int k = 1; k < arr.length; ++k)
         {
-            if (temp_sum + arr[k] > arr[k])
-                temp_sum += arr[k];
-
-            else
-                temp_sum = arr[k];
-
+            temp_sum = Math.max(temp_sum + arr[k], arr[k]);
             if(temp_sum > max_sum)
                 max_sum = temp_sum;
         }
