@@ -14,6 +14,8 @@ class Some_solutions
 
 
 
+
+
     }
 
 
@@ -36,10 +38,10 @@ class Some_solutions
     }
     static void print_matrix(int[][] matrix)
     {
-        int m = matrix[0].length;
+        int height = matrix[0].length;
 
         for (int[] ints : matrix) {
-            for (int j = 0; j < m; j++) {
+            for (int j = 0; j < height; j++) {
                 System.out.print(ints[j] + " ");
             }
             System.out.println();
