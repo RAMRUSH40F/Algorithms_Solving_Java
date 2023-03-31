@@ -1,17 +1,15 @@
-public class QuickSort
-{
+public class QuickSort {
 
-    public static void quickSort(int[] array, int low, int high)
-    {
-        if ((array.length==0) || (low>=high))
+    public static void quickSort(int[] array, int low, int high) {
+        if ((array.length == 0) || (low >= high))
             return;// Если длина массива 0,если уже нечего делить, остановить.
 
-        int mid =low + (high - low)/2;
-        int pivot = array[mid]; // Выбираем опорный элемент(пивот) как серединный, хоть, как я слышал, есть усовершенствованная версия;
-
+        int mid = low + (high - low) / 2;
+        // Выбираем опорный элемент(пивот) как серединный, хоть, как я слышал, есть усовершенствованная версия;
+        int pivot = array[mid];
         int i = low, j = high;
 
-        while (i<j) {
+        while (i < j) {
 
             while (array[i] < pivot) {
                 i++;
@@ -27,7 +25,7 @@ public class QuickSort
             j--;
         }
         quickSort(array, low, mid);
-        quickSort(array,mid+1, high);
+        quickSort(array, mid + 1, high);
 
     }
 
@@ -55,12 +53,17 @@ public class QuickSort
         System.out.println("\n-----Случайный массив------");
 
         for (int i = 0; i < testLen; i++) {
-            arr2[i] = arr1[i] = (int)Math.round(Math.random() * 10000);
+            arr2[i] = arr1[i] = (int) Math.round(Math.random() * 10000);
         }
-        
+
 
         System.out.println("Быстрая сортировка:");
         measureTime(() -> quickSort(arr1, 0, testLen - 1));
+
+        System.out.println("Сортировка выбором:// > 1min");
+        //measureTime(() -> SelectionSort.sort(arr1));
+        System.out.println("Сортировка слиянием: ");
+        measureTime(() -> MergeSort.sort(arr1));
     }
 
     private static void measureTime(Runnable task) {
